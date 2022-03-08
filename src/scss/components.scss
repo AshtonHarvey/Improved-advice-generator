@@ -1,0 +1,78 @@
+@use "./color.scss";
+
+body {
+  color: white;
+}
+
+header {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  text-align: center;
+}
+main {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+footer {
+  margin-top: 1rem;
+}
+
+#advice-id-number {
+  margin: 1rem;
+  text-align: center;
+}
+
+#advice-input-container {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  text-align: center;
+}
+
+#button-container {
+  margin-top: 1rem;
+  position: sticky;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#advice-search-button {
+  width: 50px;
+  height: 50px;
+}
+
+#advice-clear-button {
+  margin-top: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+#advice-input-field {
+  border-radius: 50px;
+  border: 3px solid white;
+  width: 100%;
+}
+
+.button {
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  border: none;
+}
+
+#advice-output-container {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  text-align: center;
+}

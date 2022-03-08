@@ -3,7 +3,8 @@ const adviceSearchButton = document.getElementById("advice-search-button");
 const adviceClearButton = document.getElementById("advice-clear-button");
 
 const adviceIDField = document.getElementById("advice-id-number");
-const advicetext = document.getElementById("advice-text");
+const adviceText = document.getElementById("advice-text");
+const adviceDefaultText = adviceText.innerHTML;
 
 let searchAdviceUrl = `https://api.adviceslip.com/advice/search/`;
 let idAdviceUrl = `https://api.adviceslip.com/advice/`;
@@ -30,6 +31,7 @@ adviceSearchButton.onclick = () => {
 
 //clear button click
 adviceClearButton.onclick = () => {
+  adviceText.innerHTML = adviceDefaultText;
   adviceInputField.value = "";
 };
 
@@ -44,10 +46,10 @@ function searchByText(string) {
           Math.random() * searchObject.slips.length
         );
         adviceIDField.innerHTML = `Advice # ${searchObject.slips[randomNumber].id}`;
-        advicetext.innerHTML = `"${searchObject.slips[randomNumber].advice}"`;
+        adviceText.innerHTML = `"${searchObject.slips[randomNumber].advice}"`;
       } else {
         adviceIDField.innerHTML = `${searchObject.message.type}`;
-        advicetext.innerHTML = `"${searchObject.message.text}"`;
+        adviceText.innerHTML = `"${searchObject.message.text}"`;
       }
     });
   console.log(string);
@@ -64,11 +66,11 @@ function searchByID(int) {
       if (slipObject.hasOwnProperty("slip")) {
         console.log(slipObject);
         adviceIDField.innerHTML = `Advice # ${slipObject.slip.id}`;
-        advicetext.innerHTML = `"${slipObject.slip.advice}"`;
+        adviceText.innerHTML = `"${slipObject.slip.advice}"`;
         console.log(slipObject);
       } else {
         adviceIDField.innerHTML = `${slipObject.message.type}`;
-        advicetext.innerHTML = `"${slipObject.message.text}"`;
+        adviceText.innerHTML = `"${slipObject.message.text}"`;
       }
     });
 }
@@ -83,11 +85,11 @@ function displayRandomAdvice() {
       if (slipObject.hasOwnProperty("slip")) {
         console.log(slipObject);
         adviceIDField.innerHTML = `Advice # ${slipObject.slip.id}`;
-        advicetext.innerHTML = `"${slipObject.slip.advice}"`;
+        adviceText.innerHTML = `"${slipObject.slip.advice}"`;
         console.log(slipObject);
       } else {
         adviceIDField.innerHTML = `${slipObject.message.type}`;
-        advicetext.innerHTML = `"${slipObject.message.text}"`;
+        adviceText.innerHTML = `"${slipObject.message.text}"`;
       }
     });
 }
