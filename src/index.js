@@ -4,6 +4,7 @@ const adviceClearButton = document.getElementById("advice-clear-button");
 
 const adviceIDField = document.getElementById("advice-id-number");
 const adviceText = document.getElementById("advice-text");
+const adviceDefaultID = adviceIDField.innerHTML;
 const adviceDefaultText = adviceText.innerHTML;
 
 let searchAdviceUrl = `https://api.adviceslip.com/advice/search/`;
@@ -31,6 +32,7 @@ adviceSearchButton.onclick = () => {
 
 //clear button click
 adviceClearButton.onclick = () => {
+  adviceIDField.innerHTML = adviceDefaultID;
   adviceText.innerHTML = adviceDefaultText;
   adviceInputField.value = "";
 };
